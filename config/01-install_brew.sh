@@ -27,15 +27,15 @@ function install_brew() {
   run_cmd brew upgrade
   if [[ "${SKIP_BREW_PKGS:-false}" != "true" ]]; then
     log "Installing ${#BREW_PKGS[@]} brew packages"
-    run_cmd brew install "${BREW_PKGS[@]}"
+    run_cmd brew install --formula "${BREW_PKGS[@]}"
   else
-    log "SKIP_BREW_PKGS=true, skipping installing brew packages"
+    log "SKIP_BREW_PKGS=true, skipping installing brew packages" "$yellow"
   fi
 
   if [[ "${SKIP_CASK_PKGS:-false}" != "true" ]]; then
     log "Installing ${#CASK_PKGS[@]} brew casks"
     run_cmd brew install --cask "${CASK_PKGS[@]}"
   else
-    log "SKIP_CASK_PKGS=true, skipping installing brew cask packages"
+    log "SKIP_CASK_PKGS=true, skipping installing brew cask packages" "$yellow"
   fi
 }

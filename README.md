@@ -25,7 +25,7 @@ This repo has a series of scripts to setup a new Mac from scratch. It will insta
 #### setup_mac.sh settings
 
 Set environment variables to control `setup_mac.sh` execution:
-  - `SKIP_ALL` - Skip everything below unless explicitly set to `true`
+  - `SKIP_ALL` - Skip everything below unless explicitly set to `false`
   - `SKIP_BREW` - Skip installing brew, brew packages, and brew cask packages
   - `SKIP_BREW_PKGS` - Skip installing brew packages
   - `SKIP_CASK_PKGS` - Skip installing brew cask packages
@@ -35,6 +35,10 @@ Set environment variables to control `setup_mac.sh` execution:
   - `SKIP_DOCK_SETTINGS` - Skip setting up the dock
   - `SKIP_MAS` - Skip installing MacOS app store packages
   - `SKIP_DUTI_SETTINGS` - Skip using duti for setting default apps
+
+For example:
+- To only install brew packages `DEBUG=false SKIP_ALL=true SKIP_BREW=false SKIP_BREW_PKGS=false ./setup_mac.sh`
+- To only configure the docker: `DEBUG=false SKIP_ALL=true SKIP_DOCK_SETTINGS=false ./setup_mac.sh`
 
 ### Other macOS Settings
 

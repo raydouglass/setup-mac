@@ -45,7 +45,6 @@ BREW_PKGS=(
     ssh-copy-id
     tea
     telnet
-    unrar
     wget
     xmlstarlet
     yq
